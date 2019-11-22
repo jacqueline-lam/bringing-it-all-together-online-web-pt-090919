@@ -28,6 +28,8 @@ class Dog
   end
   
   def save
+    # Saves an instance of  dog class to the db and then 
+    # sets the given dogs `id` attribute
     if self.id 
       self.update
     else 
@@ -43,5 +45,7 @@ class Dog
     self
   end
   
+  def self.create
 
+  end
 end
