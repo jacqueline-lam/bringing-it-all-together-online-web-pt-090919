@@ -65,4 +65,10 @@ class Dog
     result = DB[:conn].execute(sql, id)[0]
     new_dog = self.new(id: result[0], name: result[1], breed: result[2])
   end
+  
+  # Creates an instance of a dog if it doesn't already exist
+  def self.find_or_create_by
+    
+  end
+  
 end
