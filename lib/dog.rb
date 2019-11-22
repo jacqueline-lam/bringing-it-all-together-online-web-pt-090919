@@ -81,5 +81,9 @@ class Dog
   end
   
   # Return an instance of dog that matches the name from the DB
-  def self.find_by_name
+  def self.find_by_name(name)
+    sql = "SELECT * FROM dogs where name = ?"
+    result = DB[:conn].execute(sql, name)[0]
+    self.new_from_db(result)
+  end
 end
