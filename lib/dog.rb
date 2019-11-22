@@ -55,7 +55,7 @@ class Dog
   
   # creates an instance with corresponding attribute values
   def self.new_from_db(row)
-    new_dog = self.new(id: row[0], new_name: row[1], new_breed: row[2])
+    new_dog = Dog.new(id: row[0], new_name: row[1], new_breed: row[2])
     new_dog
   end
 end
