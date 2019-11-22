@@ -80,5 +80,6 @@ class Dog
     new_dog
   end
   
-  def 
+  # Return an instance of dog that matches the name from the DB
+  def self.find_by_name
 end
