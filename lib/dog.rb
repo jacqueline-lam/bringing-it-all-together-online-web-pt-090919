@@ -1,7 +1,7 @@
 class Dog
   attr_accessor :id, :name, :breed
   
-  def initialize(id:nil, new_name:, new_breed:)
+  def initialize(id:nil, name:, breed:)
     @id = id
     @name = new_name
     @breed = new_breed
@@ -47,8 +47,8 @@ class Dog
   
   # Takes in a hash of attributes and uses metaprogramming to create a new dog object
   # Then it uses the #save method to save that dog to the database
-  def self.create(name:, breed:)
-    dog = Dog.new(new_name: name, new_breed: breed)
+  def self.create(new_name:, new_breed:)
+    dog = Dog.new(name: new_name, breed: new_breed)
     dog.save
     dog
   end
