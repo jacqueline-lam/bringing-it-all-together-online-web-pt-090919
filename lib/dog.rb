@@ -72,10 +72,10 @@ class Dog
     # Find - create object but not save to db
     if !dog.empty? 
       dog_data = dog[0] #dog =  [[id, name, breed]]
-      new_dog = Dog.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
+      new_dog = self.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
     # Create and save new song
     else 
-      new_dog = Dog.create(name: name, breed: breed)
+      new_dog = self.create(name: name, breed: breed)
     end
     new_dog
   end
