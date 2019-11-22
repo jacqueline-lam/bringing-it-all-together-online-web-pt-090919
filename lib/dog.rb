@@ -68,14 +68,14 @@ class Dog
   
   # Creates an instance of a dog if it doesn't already exist
   def self.find_or_create_by(name:, breed:)
-    dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
+    dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name_input, breed_input)
     # Find - create object but not save to db
     if !dog.empty? 
       dog_data = dog[0] #dog =  [[id, name, breed]]
       new_dog = self.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
     # Create and save new song
     else 
-      new_dog = self.create(name: name, breed: breed)
+      new_dog = self.create(name: name_input, breed: breed_input)
     end
     new_dog
   end
