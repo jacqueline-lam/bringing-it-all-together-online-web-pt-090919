@@ -6,4 +6,6 @@ class Dog
     @name = name
     @breed = breed
   end
+  
+  def create
 end
